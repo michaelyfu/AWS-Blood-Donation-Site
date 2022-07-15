@@ -8,6 +8,7 @@ import "@aws-amplify/ui-react/styles.css";
 function App() {
   return (
     <div className="App">
+      test
       <AddProfile></AddProfile>
     </div>
   );

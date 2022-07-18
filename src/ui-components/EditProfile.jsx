@@ -6,7 +6,13 @@
 
 /* eslint-disable */
 import React from "react";
-import { getOverrideProps } from "@aws-amplify/ui-react/internal";
+import {
+  getOverrideProps,
+  useDataStoreCreateAction,
+  useStateMutationAction,
+} from "@aws-amplify/ui-react/internal";
+import { Registration2 } from "../models";
+import { schema } from "../models/schema";
 import {
   Button,
   Divider,
@@ -18,7 +24,84 @@ import {
   View,
 } from "@aws-amplify/ui-react";
 export default function EditProfile(props) {
-  const { overrides, ...rest } = props;
+  const { registration, overrides, ...rest } = props;
+  const [
+    textFieldTwoNineSevenSixSixNineTwoTwoValue,
+    setTextFieldTwoNineSevenSixSixNineTwoTwoValue,
+  ] = useStateMutationAction("");
+  const [
+    textFieldThreeOneFourNineTwoSixEightOneValue,
+    setTextFieldThreeOneFourNineTwoSixEightOneValue,
+  ] = useStateMutationAction("");
+  const [
+    textFieldThreeOneFourNineTwoSixEightEightValue,
+    setTextFieldThreeOneFourNineTwoSixEightEightValue,
+  ] = useStateMutationAction("");
+  const [
+    textFieldThreeOneFourNineTwoSixNineFiveValue,
+    setTextFieldThreeOneFourNineTwoSixNineFiveValue,
+  ] = useStateMutationAction("");
+  const [
+    textFieldThreeOneFourNineTwoSevenZeroNineValue,
+    setTextFieldThreeOneFourNineTwoSevenZeroNineValue,
+  ] = useStateMutationAction("");
+  const [
+    textFieldThreeOneFourNineTwoSevenOneSixValue,
+    setTextFieldThreeOneFourNineTwoSevenOneSixValue,
+  ] = useStateMutationAction("");
+  const [
+    textFieldThreeOneFourNineTwoSevenTwoThreeValue,
+    setTextFieldThreeOneFourNineTwoSevenTwoThreeValue,
+  ] = useStateMutationAction("");
+  const [
+    textFieldThreeOneFourNineTwoSevenSevenTwoValue,
+    setTextFieldThreeOneFourNineTwoSevenSevenTwoValue,
+  ] = useStateMutationAction("");
+  const [
+    textFieldThreeOneFourNineTwoSevenThreeSevenValue,
+    setTextFieldThreeOneFourNineTwoSevenThreeSevenValue,
+  ] = useStateMutationAction("");
+  const [
+    textFieldThreeOneFourNineTwoSevenFourFourValue,
+    setTextFieldThreeOneFourNineTwoSevenFourFourValue,
+  ] = useStateMutationAction("");
+  const [
+    textFieldThreeOneFourNineTwoSevenFiveOneValue,
+    setTextFieldThreeOneFourNineTwoSevenFiveOneValue,
+  ] = useStateMutationAction("");
+  const [
+    textFieldThreeOneFourNineTwoSevenFiveEightValue,
+    setTextFieldThreeOneFourNineTwoSevenFiveEightValue,
+  ] = useStateMutationAction("");
+  const [
+    textFieldThreeOneFourNineTwoSevenSixFiveValue,
+    setTextFieldThreeOneFourNineTwoSevenSixFiveValue,
+  ] = useStateMutationAction("");
+  const [
+    textFieldTwoNineSevenSixSixNineTwoThreeValue,
+    setTextFieldTwoNineSevenSixSixNineTwoThreeValue,
+  ] = useStateMutationAction("");
+  const buttonOnClick = useDataStoreCreateAction({
+    fields: {
+      fName: textFieldTwoNineSevenSixSixNineTwoTwoValue,
+      mName: textFieldThreeOneFourNineTwoSixEightOneValue,
+      lName: textFieldThreeOneFourNineTwoSixEightEightValue,
+      DOB: textFieldThreeOneFourNineTwoSixNineFiveValue,
+      Gender: "",
+      Race: textFieldThreeOneFourNineTwoSevenZeroNineValue,
+      BloodType: textFieldThreeOneFourNineTwoSevenOneSixValue,
+      DateOfLastDonation: textFieldThreeOneFourNineTwoSevenTwoThreeValue,
+      DonationFrequency: textFieldThreeOneFourNineTwoSevenSevenTwoValue,
+      MedicalConditions: textFieldThreeOneFourNineTwoSevenThreeSevenValue,
+      Address: textFieldThreeOneFourNineTwoSevenFourFourValue,
+      City: textFieldThreeOneFourNineTwoSevenFiveOneValue,
+      State: textFieldThreeOneFourNineTwoSevenFiveEightValue,
+      ZipCode: textFieldThreeOneFourNineTwoSevenSixFiveValue,
+      Country: textFieldTwoNineSevenSixSixNineTwoThreeValue,
+    },
+    model: Registration2,
+    schema: schema,
+  });
   return (
     <Flex
       gap="16px"
@@ -173,6 +256,10 @@ export default function EditProfile(props) {
             isDisabled={false}
             labelHidden={false}
             variation="default"
+            value={textFieldTwoNineSevenSixSixNineTwoTwoValue}
+            onChange={(event) => {
+              setTextFieldTwoNineSevenSixSixNineTwoTwoValue(event.target.value);
+            }}
             {...getOverrideProps(overrides, "TextField29766922")}
           ></TextField>
           <TextField
@@ -191,6 +278,12 @@ export default function EditProfile(props) {
             isDisabled={false}
             labelHidden={false}
             variation="default"
+            value={textFieldThreeOneFourNineTwoSixEightOneValue}
+            onChange={(event) => {
+              setTextFieldThreeOneFourNineTwoSixEightOneValue(
+                event.target.value
+              );
+            }}
             {...getOverrideProps(overrides, "TextField31492681")}
           ></TextField>
           <TextField
@@ -209,6 +302,12 @@ export default function EditProfile(props) {
             isDisabled={false}
             labelHidden={false}
             variation="default"
+            value={textFieldThreeOneFourNineTwoSixEightEightValue}
+            onChange={(event) => {
+              setTextFieldThreeOneFourNineTwoSixEightEightValue(
+                event.target.value
+              );
+            }}
             {...getOverrideProps(overrides, "TextField31492688")}
           ></TextField>
           <TextField
@@ -227,6 +326,12 @@ export default function EditProfile(props) {
             isDisabled={false}
             labelHidden={false}
             variation="default"
+            value={textFieldThreeOneFourNineTwoSixNineFiveValue}
+            onChange={(event) => {
+              setTextFieldThreeOneFourNineTwoSixNineFiveValue(
+                event.target.value
+              );
+            }}
             {...getOverrideProps(overrides, "TextField31492695")}
           ></TextField>
           <TextField
@@ -263,6 +368,12 @@ export default function EditProfile(props) {
             isDisabled={false}
             labelHidden={false}
             variation="default"
+            value={textFieldThreeOneFourNineTwoSevenZeroNineValue}
+            onChange={(event) => {
+              setTextFieldThreeOneFourNineTwoSevenZeroNineValue(
+                event.target.value
+              );
+            }}
             {...getOverrideProps(overrides, "TextField31492709")}
           ></TextField>
           <TextField
@@ -281,6 +392,12 @@ export default function EditProfile(props) {
             isDisabled={false}
             labelHidden={false}
             variation="default"
+            value={textFieldThreeOneFourNineTwoSevenOneSixValue}
+            onChange={(event) => {
+              setTextFieldThreeOneFourNineTwoSevenOneSixValue(
+                event.target.value
+              );
+            }}
             {...getOverrideProps(overrides, "TextField31492716")}
           ></TextField>
           <TextField
@@ -299,6 +416,12 @@ export default function EditProfile(props) {
             isDisabled={false}
             labelHidden={false}
             variation="default"
+            value={textFieldThreeOneFourNineTwoSevenTwoThreeValue}
+            onChange={(event) => {
+              setTextFieldThreeOneFourNineTwoSevenTwoThreeValue(
+                event.target.value
+              );
+            }}
             {...getOverrideProps(overrides, "TextField31492723")}
           ></TextField>
           <TextField
@@ -335,6 +458,12 @@ export default function EditProfile(props) {
             isDisabled={false}
             labelHidden={false}
             variation="default"
+            value={textFieldThreeOneFourNineTwoSevenSevenTwoValue}
+            onChange={(event) => {
+              setTextFieldThreeOneFourNineTwoSevenSevenTwoValue(
+                event.target.value
+              );
+            }}
             {...getOverrideProps(overrides, "TextField31492772")}
           ></TextField>
           <TextField
@@ -353,6 +482,12 @@ export default function EditProfile(props) {
             isDisabled={false}
             labelHidden={false}
             variation="default"
+            value={textFieldThreeOneFourNineTwoSevenThreeSevenValue}
+            onChange={(event) => {
+              setTextFieldThreeOneFourNineTwoSevenThreeSevenValue(
+                event.target.value
+              );
+            }}
             {...getOverrideProps(overrides, "TextField31492737")}
           ></TextField>
           <TextField
@@ -371,6 +506,12 @@ export default function EditProfile(props) {
             isDisabled={false}
             labelHidden={false}
             variation="default"
+            value={textFieldThreeOneFourNineTwoSevenFourFourValue}
+            onChange={(event) => {
+              setTextFieldThreeOneFourNineTwoSevenFourFourValue(
+                event.target.value
+              );
+            }}
             {...getOverrideProps(overrides, "TextField31492744")}
           ></TextField>
           <TextField
@@ -389,6 +530,12 @@ export default function EditProfile(props) {
             isDisabled={false}
             labelHidden={false}
             variation="default"
+            value={textFieldThreeOneFourNineTwoSevenFiveOneValue}
+            onChange={(event) => {
+              setTextFieldThreeOneFourNineTwoSevenFiveOneValue(
+                event.target.value
+              );
+            }}
             {...getOverrideProps(overrides, "TextField31492751")}
           ></TextField>
           <TextField
@@ -407,6 +554,12 @@ export default function EditProfile(props) {
             isDisabled={false}
             labelHidden={false}
             variation="default"
+            value={textFieldThreeOneFourNineTwoSevenFiveEightValue}
+            onChange={(event) => {
+              setTextFieldThreeOneFourNineTwoSevenFiveEightValue(
+                event.target.value
+              );
+            }}
             {...getOverrideProps(overrides, "TextField31492758")}
           ></TextField>
           <TextField
@@ -425,6 +578,12 @@ export default function EditProfile(props) {
             isDisabled={false}
             labelHidden={false}
             variation="default"
+            value={textFieldThreeOneFourNineTwoSevenSixFiveValue}
+            onChange={(event) => {
+              setTextFieldThreeOneFourNineTwoSevenSixFiveValue(
+                event.target.value
+              );
+            }}
             {...getOverrideProps(overrides, "TextField31492765")}
           ></TextField>
           <TextField
@@ -443,6 +602,12 @@ export default function EditProfile(props) {
             isDisabled={false}
             labelHidden={false}
             variation="default"
+            value={textFieldTwoNineSevenSixSixNineTwoThreeValue}
+            onChange={(event) => {
+              setTextFieldTwoNineSevenSixSixNineTwoThreeValue(
+                event.target.value
+              );
+            }}
             {...getOverrideProps(overrides, "TextField29766923")}
           ></TextField>
         </Flex>
@@ -470,6 +635,9 @@ export default function EditProfile(props) {
           isDisabled={false}
           variation="primary"
           children="Save"
+          onClick={() => {
+            buttonOnClick();
+          }}
           {...getOverrideProps(overrides, "Button")}
         ></Button>
       </Flex>

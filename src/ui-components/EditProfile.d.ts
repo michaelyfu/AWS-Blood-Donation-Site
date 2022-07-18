@@ -6,8 +6,11 @@
 
 import React from "react";
 import { EscapeHatchProps } from "@aws-amplify/ui-react/internal";
+import { Registration2 } from "../models";
 import { FlexProps } from "@aws-amplify/ui-react";
 export declare type EditProfileProps = React.PropsWithChildren<Partial<FlexProps> & {
+    registration?: Registration2;
+} & {
     overrides?: EscapeHatchProps | undefined | null;
 }>;
 export default function EditProfile(props: EditProfileProps): React.ReactElement;

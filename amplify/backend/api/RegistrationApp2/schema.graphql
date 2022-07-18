@@ -1,5 +1,25 @@
+enum Genders {
+  MALE
+  FEMALE
+  OTHER
+}
+
 type Registration2 @model @auth(rules: [{allow: public}]) {
   id: ID!
   fName: String
+  mName: String
   lName: String
+  DOB: AWSDate
+  Gender: String
+  Race: String
+  BloodType: String
+  DateOfLastDonation: AWSDate
+  DonationFrequency: String
+  MedicalConditions: String
+  Address: String
+  City: String
+  State: String
+  ZipCode: String
+  Country: String
 }
+ 

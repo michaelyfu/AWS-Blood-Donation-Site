@@ -14,52 +14,90 @@ import {
 } from "@aws-amplify/ui-react/internal";
 import { Registration2 } from "../models";
 import { schema } from "../models/schema";
-import {
-  Button,
-  Divider,
-  Flex,
-  Image,
-  Text,
-  TextField,
-} from "@aws-amplify/ui-react";
+import { Button, Divider, Flex, Text, TextField } from "@aws-amplify/ui-react";
 export default function AddProfile(props) {
-  const { registartion, overrides, ...rest } = props;
+  const { registration, overrides, ...rest } = props;
+  const [textFieldColonFirstNameValue, setTextFieldColonFirstNameValue] =
+    useStateMutationAction("");
+  const [textFieldColonMidNameValue, setTextFieldColonMidNameValue] =
+    useStateMutationAction("");
+  const [textFieldColonLastNameValue, setTextFieldColonLastNameValue] =
+    useStateMutationAction("");
+  const [textFieldColonDOBValue, setTextFieldColonDOBValue] =
+    useStateMutationAction("");
+  const [textFieldColonBloodTypeValue, setTextFieldColonBloodTypeValue] =
+    useStateMutationAction("");
+  const [textFieldColonLastDonationValue, setTextFieldColonLastDonationValue] =
+    useStateMutationAction("");
   const [
-    textFieldThreeOneSixFiveTwoNineNineZeroValue,
-    setTextFieldThreeOneSixFiveTwoNineNineZeroValue,
+    textFieldColonDonorFrequencyValue,
+    setTextFieldColonDonorFrequencyValue,
   ] = useStateMutationAction("");
   const [
-    textFieldThreeOneSixFiveTwoNineNineTwoValue,
-    setTextFieldThreeOneSixFiveTwoNineNineTwoValue,
+    textFieldColonMedConditionsValue,
+    setTextFieldColonMedConditionsValue,
   ] = useStateMutationAction("");
-  const uploadNewImageOnClick = useAuthSignOutAction({ global: false });
+  const [textFieldColonAddressValue, setTextFieldColonAddressValue] =
+    useStateMutationAction("");
+  const [
+    textFieldThreeOneSixFiveThreeZeroZeroTwoValue,
+    setTextFieldThreeOneSixFiveThreeZeroZeroTwoValue,
+  ] = useStateMutationAction("");
+  const [
+    textFieldThreeOneSixFiveThreeZeroZeroThreeValue,
+    setTextFieldThreeOneSixFiveThreeZeroZeroThreeValue,
+  ] = useStateMutationAction("");
+  const [
+    textFieldThreeOneSixFiveThreeZeroZeroFourValue,
+    setTextFieldThreeOneSixFiveThreeZeroZeroFourValue,
+  ] = useStateMutationAction("");
+  const [
+    textFieldThreeOneSixFiveThreeZeroZeroFiveValue,
+    setTextFieldThreeOneSixFiveThreeZeroZeroFiveValue,
+  ] = useStateMutationAction("");
+  const logOutButtonOnClick = useAuthSignOutAction({ global: false });
   const buttonOnClick = useDataStoreCreateAction({
     fields: {
-      fName: textFieldThreeOneSixFiveTwoNineNineZeroValue,
-      lName: textFieldThreeOneSixFiveTwoNineNineTwoValue,
+      fName: textFieldColonFirstNameValue,
+      mName: textFieldColonMidNameValue,
+      lName: textFieldColonLastNameValue,
+      DOB: textFieldColonDOBValue,
+      BloodType: textFieldColonBloodTypeValue,
+      DateOfLastDonation: textFieldColonLastDonationValue,
+      DonationFrequency: textFieldColonDonorFrequencyValue,
+      MedicalConditions: textFieldColonMedConditionsValue,
+      Address: textFieldColonAddressValue,
+      City: textFieldThreeOneSixFiveThreeZeroZeroTwoValue,
+      State: textFieldThreeOneSixFiveThreeZeroZeroThreeValue,
+      ZipCode: textFieldThreeOneSixFiveThreeZeroZeroFourValue,
+      Country: textFieldThreeOneSixFiveThreeZeroZeroFiveValue,
+      Gender: '"Gender"',
     },
     model: Registration2,
     schema: schema,
   });
   return (
-    <Flex
-      gap="0"
-      direction="column"
-      position="relative"
-      padding="0px 0px 0px 0px"
-      {...rest}
-      {...getOverrideProps(overrides, "AddProfile")}
-    >
-      <Flex
-        gap="16px"
-        direction="column"
-        width="640px"
-        shrink="0"
-        position="relative"
-        padding="0px 0px 0px 0px"
-        backgroundColor="rgba(255,255,255,1)"
-        {...getOverrideProps(overrides, "AddProfile31652979")}
-      >
+    // <Flex
+    //   gap="0"
+    //   direction="column"
+    //   width="1440px"
+    //   height="1628px"
+    //   position="relative"
+    //   padding="0px 0px 58px 0px"
+    //   {...rest}
+    //   {...getOverrideProps(overrides, "AddProfile")}
+    // >
+    //   <Flex
+    //     gap="16px"
+    //     direction="column"
+    //     width="1440px"
+    //     height="1628px"
+    //     shrink="0"
+    //     position="relative"
+    //     padding="0px 0px 0px 0px"
+    //     backgroundColor="rgba(255,238,238,1)"
+    //     {...getOverrideProps(overrides, "AddProfile31652979")}
+      // >
         <Flex
           gap="24px"
           direction="column"
@@ -71,15 +109,12 @@ export default function AddProfile(props) {
           {...getOverrideProps(overrides, "Content")}
         >
           <Flex
-            gap="16px"
-            direction="row"
-            alignItems="center"
-            shrink="0"
-            alignSelf="stretch"
-            objectFit="cover"
-            position="relative"
             padding="0px 0px 0px 0px"
-            {...getOverrideProps(overrides, "Edit Profile31652981")}
+            width="1392px"
+            height="40px"
+            shrink="0"
+            position="relative"
+            {...getOverrideProps(overrides, "Group 28")}
           >
             <Text
               fontFamily="Inter"
@@ -91,14 +126,44 @@ export default function AddProfile(props) {
               display="flex"
               direction="column"
               justifyContent="flex-start"
-              shrink="0"
-              position="relative"
+              position="absolute"
+              top="20px"
+              left="0px"
               padding="0px 0px 0px 0px"
               whiteSpace="pre-wrap"
               children="Add Profile"
-              {...getOverrideProps(overrides, "Edit Profile31652984")}
+              {...getOverrideProps(overrides, "Add Profile31652984")}
             ></Text>
+            <Button
+              display="flex"
+              gap="0"
+              position="absolute"
+              top="0px"
+              left="1266px"
+              direction="row"
+              justifyContent="center"
+              alignItems="center"
+              size="default"
+              isDisabled={false}
+              variation="primary"
+              children="Log Out"
+              onClick={() => {
+                logOutButtonOnClick();
+              }}
+              {...getOverrideProps(overrides, "Log Out Button")}
+            ></Button>
           </Flex>
+          <Flex
+            gap="16px"
+            direction="row"
+            alignItems="center"
+            shrink="0"
+            alignSelf="stretch"
+            objectFit="cover"
+            position="relative"
+            padding="0px 0px 0px 0px"
+            {...getOverrideProps(overrides, "Add Profile31652981")}
+          ></Flex>
           <Divider
             height="1px"
             shrink="0"
@@ -110,48 +175,6 @@ export default function AddProfile(props) {
             orientation="horizontal"
             {...getOverrideProps(overrides, "Divider31652985")}
           ></Divider>
-          <Flex
-            gap="16px"
-            direction="row"
-            alignItems="center"
-            shrink="0"
-            alignSelf="stretch"
-            objectFit="cover"
-            position="relative"
-            padding="0px 0px 0px 0px"
-            {...getOverrideProps(overrides, "Profile")}
-          >
-            <Image
-              width="96px"
-              height="96px"
-              shrink="0"
-              position="relative"
-              borderRadius="160px"
-              padding="0px 0px 0px 0px"
-              {...getOverrideProps(overrides, "image")}
-            ></Image>
-            <Text
-              fontFamily="Inter"
-              fontSize="16px"
-              fontWeight="400"
-              color="rgba(13,26,38,1)"
-              lineHeight="22px"
-              textAlign="left"
-              display="flex"
-              direction="column"
-              justifyContent="flex-start"
-              textDecoration="underline"
-              shrink="0"
-              position="relative"
-              padding="0px 0px 0px 0px"
-              whiteSpace="pre-wrap"
-              children="Upload New Image"
-              onClick={() => {
-                uploadNewImageOnClick();
-              }}
-              {...getOverrideProps(overrides, "Upload New Image")}
-            ></Text>
-          </Flex>
           <Flex
             gap="16px"
             direction="column"
@@ -178,13 +201,33 @@ export default function AddProfile(props) {
               isDisabled={false}
               labelHidden={false}
               variation="default"
-              value={textFieldThreeOneSixFiveTwoNineNineZeroValue}
+              value={textFieldColonFirstNameValue}
               onChange={(event) => {
-                setTextFieldThreeOneSixFiveTwoNineNineZeroValue(
-                  event.target.value
-                );
+                setTextFieldColonFirstNameValue(event.target.value);
               }}
-              {...getOverrideProps(overrides, "TextField31652990")}
+              {...getOverrideProps(overrides, "TextField: FirstName")}
+            ></TextField>
+            <TextField
+              display="flex"
+              gap="8px"
+              direction="column"
+              justifyContent="center"
+              shrink="0"
+              alignSelf="stretch"
+              objectFit="cover"
+              position="relative"
+              padding="0px 0px 0px 0px"
+              label="Middle Name (Optional)"
+              placeholder="L"
+              size="default"
+              isDisabled={false}
+              labelHidden={false}
+              variation="default"
+              value={textFieldColonMidNameValue}
+              onChange={(event) => {
+                setTextFieldColonMidNameValue(event.target.value);
+              }}
+              {...getOverrideProps(overrides, "TextField: MidName")}
             ></TextField>
             <TextField
               display="flex"
@@ -202,13 +245,293 @@ export default function AddProfile(props) {
               isDisabled={false}
               labelHidden={false}
               variation="default"
-              value={textFieldThreeOneSixFiveTwoNineNineTwoValue}
+              value={textFieldColonLastNameValue}
               onChange={(event) => {
-                setTextFieldThreeOneSixFiveTwoNineNineTwoValue(
+                setTextFieldColonLastNameValue(event.target.value);
+              }}
+              {...getOverrideProps(overrides, "TextField:LastName")}
+            ></TextField>
+            <TextField
+              display="flex"
+              gap="8px"
+              direction="column"
+              justifyContent="center"
+              shrink="0"
+              alignSelf="stretch"
+              objectFit="cover"
+              position="relative"
+              padding="0px 0px 0px 0px"
+              label="Date Of Birth"
+              placeholder="MM-DD-YYYY"
+              size="default"
+              isDisabled={false}
+              labelHidden={false}
+              variation="default"
+              value={textFieldColonDOBValue}
+              onChange={(event) => {
+                setTextFieldColonDOBValue(event.target.value);
+              }}
+              {...getOverrideProps(overrides, "TextField:DOB")}
+            ></TextField>
+            <TextField
+              display="flex"
+              gap="8px"
+              direction="column"
+              justifyContent="center"
+              shrink="0"
+              alignSelf="stretch"
+              objectFit="cover"
+              position="relative"
+              padding="0px 0px 0px 0px"
+              label="Gender"
+              placeholder="Set Gender"
+              size="default"
+              isDisabled={false}
+              labelHidden={false}
+              variation="default"
+              {...getOverrideProps(overrides, "TextField: Gender")}
+            ></TextField>
+            <TextField
+              display="flex"
+              gap="8px"
+              direction="column"
+              justifyContent="center"
+              shrink="0"
+              alignSelf="stretch"
+              objectFit="cover"
+              position="relative"
+              padding="0px 0px 0px 0px"
+              label="Race"
+              placeholder="Set Race"
+              size="default"
+              isDisabled={false}
+              labelHidden={false}
+              variation="default"
+              {...getOverrideProps(overrides, "TextField: Race")}
+            ></TextField>
+            <TextField
+              display="flex"
+              gap="8px"
+              direction="column"
+              justifyContent="center"
+              shrink="0"
+              alignSelf="stretch"
+              objectFit="cover"
+              position="relative"
+              padding="0px 0px 0px 0px"
+              label="Blood Type"
+              placeholder="Set Blood Type"
+              size="default"
+              isDisabled={false}
+              labelHidden={false}
+              variation="default"
+              value={textFieldColonBloodTypeValue}
+              onChange={(event) => {
+                setTextFieldColonBloodTypeValue(event.target.value);
+              }}
+              {...getOverrideProps(overrides, "TextField: BloodType")}
+            ></TextField>
+            <TextField
+              display="flex"
+              gap="8px"
+              direction="column"
+              justifyContent="center"
+              shrink="0"
+              alignSelf="stretch"
+              objectFit="cover"
+              position="relative"
+              padding="0px 0px 0px 0px"
+              label="Have You Donated Before?"
+              placeholder="Yes/No"
+              size="default"
+              isDisabled={false}
+              labelHidden={false}
+              variation="default"
+              {...getOverrideProps(overrides, "TextField:DonatedBefore")}
+            ></TextField>
+            <TextField
+              display="flex"
+              gap="8px"
+              direction="column"
+              justifyContent="center"
+              shrink="0"
+              alignSelf="stretch"
+              objectFit="cover"
+              position="relative"
+              padding="0px 0px 0px 0px"
+              label="Date of Last Donation"
+              placeholder="MM-DD-YYYY"
+              size="default"
+              isDisabled={false}
+              labelHidden={false}
+              variation="default"
+              value={textFieldColonLastDonationValue}
+              onChange={(event) => {
+                setTextFieldColonLastDonationValue(event.target.value);
+              }}
+              {...getOverrideProps(overrides, "TextField:LastDonation")}
+            ></TextField>
+            <TextField
+              display="flex"
+              gap="8px"
+              direction="column"
+              justifyContent="center"
+              shrink="0"
+              alignSelf="stretch"
+              objectFit="cover"
+              position="relative"
+              padding="0px 0px 0px 0px"
+              label="How often do you donate?"
+              placeholder="Input Paragraph Here"
+              size="default"
+              isDisabled={false}
+              labelHidden={false}
+              variation="default"
+              value={textFieldColonDonorFrequencyValue}
+              onChange={(event) => {
+                setTextFieldColonDonorFrequencyValue(event.target.value);
+              }}
+              {...getOverrideProps(overrides, "TextField:DonorFrequency")}
+            ></TextField>
+            <TextField
+              display="flex"
+              gap="8px"
+              direction="column"
+              justifyContent="center"
+              shrink="0"
+              alignSelf="stretch"
+              objectFit="cover"
+              position="relative"
+              padding="0px 0px 0px 0px"
+              label="Any medical condition(s)?"
+              placeholder="List Medical Conditions Here"
+              size="default"
+              isDisabled={false}
+              labelHidden={false}
+              variation="default"
+              value={textFieldColonMedConditionsValue}
+              onChange={(event) => {
+                setTextFieldColonMedConditionsValue(event.target.value);
+              }}
+              {...getOverrideProps(overrides, "TextField:MedConditions")}
+            ></TextField>
+            <TextField
+              display="flex"
+              gap="8px"
+              direction="column"
+              justifyContent="center"
+              shrink="0"
+              alignSelf="stretch"
+              objectFit="cover"
+              position="relative"
+              padding="0px 0px 0px 0px"
+              label="Address"
+              placeholder="Set Address Here"
+              size="default"
+              isDisabled={false}
+              labelHidden={false}
+              variation="default"
+              value={textFieldColonAddressValue}
+              onChange={(event) => {
+                setTextFieldColonAddressValue(event.target.value);
+              }}
+              {...getOverrideProps(overrides, "TextField: Address")}
+            ></TextField>
+            <TextField
+              display="flex"
+              gap="8px"
+              direction="column"
+              justifyContent="center"
+              shrink="0"
+              alignSelf="stretch"
+              objectFit="cover"
+              position="relative"
+              padding="0px 0px 0px 0px"
+              label="Country"
+              placeholder="Set Country Here"
+              size="default"
+              isDisabled={false}
+              labelHidden={false}
+              variation="default"
+              value={textFieldThreeOneSixFiveThreeZeroZeroFiveValue}
+              onChange={(event) => {
+                setTextFieldThreeOneSixFiveThreeZeroZeroFiveValue(
                   event.target.value
                 );
               }}
-              {...getOverrideProps(overrides, "TextField31652992")}
+              {...getOverrideProps(overrides, "TextField31653005")}
+            ></TextField>
+            <TextField
+              display="flex"
+              gap="8px"
+              direction="column"
+              justifyContent="center"
+              shrink="0"
+              alignSelf="stretch"
+              objectFit="cover"
+              position="relative"
+              padding="0px 0px 0px 0px"
+              label="City"
+              placeholder="Set City Here"
+              size="default"
+              isDisabled={false}
+              labelHidden={false}
+              variation="default"
+              value={textFieldThreeOneSixFiveThreeZeroZeroTwoValue}
+              onChange={(event) => {
+                setTextFieldThreeOneSixFiveThreeZeroZeroTwoValue(
+                  event.target.value
+                );
+              }}
+              {...getOverrideProps(overrides, "TextField31653002")}
+            ></TextField>
+            <TextField
+              display="flex"
+              gap="8px"
+              direction="column"
+              justifyContent="center"
+              shrink="0"
+              alignSelf="stretch"
+              objectFit="cover"
+              position="relative"
+              padding="0px 0px 0px 0px"
+              label="State"
+              placeholder="Set State Here"
+              size="default"
+              isDisabled={false}
+              labelHidden={false}
+              variation="default"
+              value={textFieldThreeOneSixFiveThreeZeroZeroThreeValue}
+              onChange={(event) => {
+                setTextFieldThreeOneSixFiveThreeZeroZeroThreeValue(
+                  event.target.value
+                );
+              }}
+              {...getOverrideProps(overrides, "TextField31653003")}
+            ></TextField>
+            <TextField
+              display="flex"
+              gap="8px"
+              direction="column"
+              justifyContent="center"
+              shrink="0"
+              alignSelf="stretch"
+              objectFit="cover"
+              position="relative"
+              padding="0px 0px 0px 0px"
+              label="Zip Code"
+              placeholder="Set Zip Code Here"
+              size="default"
+              isDisabled={false}
+              labelHidden={false}
+              variation="default"
+              value={textFieldThreeOneSixFiveThreeZeroZeroFourValue}
+              onChange={(event) => {
+                setTextFieldThreeOneSixFiveThreeZeroZeroFourValue(
+                  event.target.value
+                );
+              }}
+              {...getOverrideProps(overrides, "TextField31653004")}
             ></TextField>
           </Flex>
           <Divider
@@ -241,7 +564,7 @@ export default function AddProfile(props) {
             {...getOverrideProps(overrides, "Button")}
           ></Button>
         </Flex>
-      </Flex>
-    </Flex>
+    //   </Flex>
+    // </Flex>
   );
 }

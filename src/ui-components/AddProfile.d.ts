@@ -9,7 +9,7 @@ import { EscapeHatchProps } from "@aws-amplify/ui-react/internal";
 import { Registration2 } from "../models";
 import { FlexProps } from "@aws-amplify/ui-react";
 export declare type AddProfileProps = React.PropsWithChildren<Partial<FlexProps> & {
-    registartion?: Registration2;
+    registration?: Registration2;
 } & {
     overrides?: EscapeHatchProps | undefined | null;
 }>;

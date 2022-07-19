@@ -77,29 +77,30 @@ export default function AddProfile(props) {
     schema: schema,
   });
   return (
-    // <Flex
-    //   gap="0"
-    //   direction="column"
-    //   width="1440px"
-    //   height="1628px"
-    //   position="relative"
-    //   padding="0px 0px 58px 0px"
-    //   {...rest}
-    //   {...getOverrideProps(overrides, "AddProfile")}
-    // >
-    //   <Flex
-    //     gap="16px"
-    //     direction="column"
-    //     width="1440px"
-    //     height="1628px"
-    //     shrink="0"
-    //     position="relative"
-    //     padding="0px 0px 0px 0px"
-    //     backgroundColor="rgba(255,238,238,1)"
-    //     {...getOverrideProps(overrides, "AddProfile31652979")}
-      // >
+    <Flex
+      gap="0"
+      direction="column"
+      width="715px"
+      height="1628px"
+      position="relative"
+      margin="100px"
+      padding="0px 0px 0px 0px" // CONTROLS MARGINS
+      {...rest}
+      {...getOverrideProps(overrides, "AddProfile")}
+    >
+      <Flex
+        gap="16px"
+        direction="column"
+        width="715px"
+        height="1628px"
+        shrink="0"
+        position="relative"
+        padding="0px 0px 0px 0px"
+        backgroundColor="rgba(255,238,238,1)"
+        {...getOverrideProps(overrides, "AddProfile31652979")}
+      >
         <Flex
-          gap="24px"
+          gap="0px"
           direction="column"
           shrink="0"
           alignSelf="stretch"
@@ -110,8 +111,8 @@ export default function AddProfile(props) {
         >
           <Flex
             padding="0px 0px 0px 0px"
-            width="1392px"
-            height="40px"
+            width="87px"
+            height="20px"
             shrink="0"
             position="relative"
             {...getOverrideProps(overrides, "Group 28")}
@@ -127,31 +128,13 @@ export default function AddProfile(props) {
               direction="column"
               justifyContent="flex-start"
               position="absolute"
-              top="20px"
+              top="0px"
               left="0px"
               padding="0px 0px 0px 0px"
               whiteSpace="pre-wrap"
               children="Add Profile"
               {...getOverrideProps(overrides, "Add Profile31652984")}
             ></Text>
-            <Button
-              display="flex"
-              gap="0"
-              position="absolute"
-              top="0px"
-              left="1266px"
-              direction="row"
-              justifyContent="center"
-              alignItems="center"
-              size="default"
-              isDisabled={false}
-              variation="primary"
-              children="Log Out"
-              onClick={() => {
-                logOutButtonOnClick();
-              }}
-              {...getOverrideProps(overrides, "Log Out Button")}
-            ></Button>
           </Flex>
           <Flex
             gap="16px"
@@ -164,6 +147,24 @@ export default function AddProfile(props) {
             padding="0px 0px 0px 0px"
             {...getOverrideProps(overrides, "Add Profile31652981")}
           ></Flex>
+          <Button
+            display="flex"
+            gap="0"
+            direction="row"
+            width="fit-content"
+            justifyContent="center"
+            alignItems="center"
+            shrink="0"
+            position="relative"
+            size="default"
+            isDisabled={false}
+            variation="primary"
+            children="Log Out"
+            onClick={() => {
+              logOutButtonOnClick();
+            }}
+            {...getOverrideProps(overrides, "Log Out Button")}
+          ></Button>
           <Divider
             height="1px"
             shrink="0"
@@ -564,7 +565,7 @@ export default function AddProfile(props) {
             {...getOverrideProps(overrides, "Button")}
           ></Button>
         </Flex>
-    //   </Flex>
-    // </Flex>
+      </Flex>
+    </Flex>
   );
 }

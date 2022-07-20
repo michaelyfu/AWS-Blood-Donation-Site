@@ -134,7 +134,7 @@ export default function AddProfile(props) {
               position="absolute"
               top="0px"
               left="0px"
-              padding="8px 0px 0px 0px"
+              padding="17px 0px 0px 0px" // EDIT THIS TO CHANGE HEIGHT OF "ADD PROFILE TEXT"
               whiteSpace="pre-wrap"
               children="Add Profile"
               {...getOverrideProps(overrides, "Add Profile31652984")}

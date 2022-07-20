@@ -6,6 +6,7 @@
 
 /* eslint-disable */
 import React from "react";
+import AddProfileManual from "./AddProfileManual.css";
 import {
   getOverrideProps,
   useAuthSignOutAction,
@@ -15,6 +16,7 @@ import {
 import { Registration2 } from "../models";
 import { schema } from "../models/schema";
 import { Button, Divider, Flex, Text, TextField } from "@aws-amplify/ui-react";
+import LogOutButton from "../components/LogOutButton";
 export default function AddProfile(props) {
   const { registration, overrides, ...rest } = props;
   const [textFieldColonFirstNameValue, setTextFieldColonFirstNameValue] =
@@ -99,6 +101,7 @@ export default function AddProfile(props) {
         backgroundColor="rgba(255,238,238,1)"
         {...getOverrideProps(overrides, "AddProfile31652979")}
       >
+        {/* <LogOutButton></LogOutButton> */}
         <Flex
           gap="0px"
           direction="column"
@@ -109,10 +112,11 @@ export default function AddProfile(props) {
           padding="24px 24px 24px 24px"
           {...getOverrideProps(overrides, "Content")}
         >
+          {/* <div className="bar"> */}
           <Flex
             padding="0px 0px 0px 0px"
-            width="87px"
-            height="20px"
+            // width="87px"
+            // height="20px"
             shrink="0"
             position="relative"
             {...getOverrideProps(overrides, "Group 28")}
@@ -130,12 +134,18 @@ export default function AddProfile(props) {
               position="absolute"
               top="0px"
               left="0px"
-              padding="0px 0px 0px 0px"
+              padding="8px 0px 0px 0px"
               whiteSpace="pre-wrap"
               children="Add Profile"
               {...getOverrideProps(overrides, "Add Profile31652984")}
             ></Text>
+            <div className="bar">
+            {/* Add Profile */}
+          <LogOutButton></LogOutButton>
+          </div>
           </Flex>
+          {/* </div> */}
+          {/* <LogOutButton></LogOutButton> */}
           <Flex
             gap="16px"
             direction="row"
@@ -144,10 +154,11 @@ export default function AddProfile(props) {
             alignSelf="stretch"
             objectFit="cover"
             position="relative"
-            padding="0px 0px 0px 0px"
+            padding="0px 0px 20px 0px"
             {...getOverrideProps(overrides, "Add Profile31652981")}
           ></Flex>
-          <Button
+          {/* <LogOutButton></LogOutButton> */}
+          {/* <Button
             display="flex"
             gap="0"
             direction="row"
@@ -164,7 +175,7 @@ export default function AddProfile(props) {
               logOutButtonOnClick();
             }}
             {...getOverrideProps(overrides, "Log Out Button")}
-          ></Button>
+          ></Button> */}
           <Divider
             height="1px"
             shrink="0"

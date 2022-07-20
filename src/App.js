@@ -2,9 +2,12 @@ import "./App.css";
 import AddProfile from "./ui-components/AddProfile.jsx";
 import EditProfile from "./ui-components/EditProfile.jsx";
 import { withAuthenticator } from "@aws-amplify/ui-react";
+import { Authenticator } from "@aws-amplify/ui-react";
 import "@aws-amplify/ui-react/styles.css";
-
+import LogOutButton from "./components/LogOutButton.js";
 import React, { Component } from "react";
+
+
 
 class App extends Component {
   render() {
@@ -31,7 +34,7 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withAuthenticator(App);
 
 // function App() {
 //   return (

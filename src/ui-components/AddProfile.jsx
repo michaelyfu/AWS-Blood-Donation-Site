@@ -569,6 +569,7 @@ export default function AddProfile(props) {
             size="default"
             isDisabled={false}
             variation="primary"
+            marginTop="20px"
             children="Save"
             onClick={() => {
               buttonOnClick();

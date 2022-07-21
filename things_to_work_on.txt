@@ -1,10 +1,14 @@
 things to work on:
 
-1) centering:
+1) dropdown for data
+2) confirmation/rejection message after submit button
+
+3) styling authentication component/addProfile component
+
+DONE:
+1) log out button
+	-make state that refereshes page
+
+2) centering:
 	-create flexbox around the AddProfile component
 	-keep note of flex direction
-2) dropdown for data
-3) confirmation/rejection message after submit button
-4) log out button
-	-make state that refereshes page
-5) styling authentication component/addProfile component

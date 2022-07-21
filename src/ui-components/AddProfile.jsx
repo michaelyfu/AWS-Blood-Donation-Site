@@ -7,6 +7,7 @@
 /* eslint-disable */
 import React from "react";
 import AddProfileManual from "./AddProfileManual.css";
+import { SelectField } from "@aws-amplify/ui-react";
 import {
   getOverrideProps,
   useAuthSignOutAction,
@@ -275,7 +276,7 @@ export default function AddProfile(props) {
               position="relative"
               padding="0px 0px 0px 0px"
               label="Date Of Birth"
-              placeholder="MM-DD-YYYY"
+              placeholder="YYYY-MM-DD"
               size="default"
               isDisabled={false}
               labelHidden={false}
@@ -304,6 +305,16 @@ export default function AddProfile(props) {
               variation="default"
               {...getOverrideProps(overrides, "TextField: Gender")}
             ></TextField>
+            <SelectField label="Gender Dropdown Test">
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+              value={textFieldColonFirstNameValue}
+              onChange={(event) => {
+                setTextFieldColonFirstNameValue(event.target.value);
+              }}
+              {/* {...getOverrideProps(overrides, "TextField: FirstName")} */}
+            </SelectField>
             <TextField
               display="flex"
               gap="8px"
@@ -373,7 +384,7 @@ export default function AddProfile(props) {
               position="relative"
               padding="0px 0px 0px 0px"
               label="Date of Last Donation"
-              placeholder="MM-DD-YYYY"
+              placeholder="YYYY-MM-DD"
               size="default"
               isDisabled={false}
               labelHidden={false}

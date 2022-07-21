@@ -98,6 +98,7 @@ export default function AddProfile(props) {
         shrink="0"
         position="relative"
         padding="0px 0px 0px 0px"
+        borderRadius="10px"
         backgroundColor="rgba(255,238,238,1)"
         {...getOverrideProps(overrides, "AddProfile31652979")}
       >
@@ -569,7 +570,7 @@ export default function AddProfile(props) {
             size="default"
             isDisabled={false}
             variation="primary"
-            marginTop="20px"
+            marginTop="15px"
             children="Save"
             onClick={() => {
               buttonOnClick();

@@ -8,6 +8,7 @@
 import React from "react";
 import AddProfileManual from "./AddProfileManual.css";
 import { SelectField } from "@aws-amplify/ui-react";
+import LogOutButton from "../components/LogOutButton";
 import {
   getOverrideProps,
   useAuthSignOutAction,
@@ -16,8 +17,14 @@ import {
 } from "@aws-amplify/ui-react/internal";
 import { Registration2 } from "../models";
 import { schema } from "../models/schema";
-import { Button, Divider, Flex, Text, TextField } from "@aws-amplify/ui-react";
-import LogOutButton from "../components/LogOutButton";
+import {
+  Button,
+  Divider,
+  Flex,
+  Image,
+  Text,
+  TextField,
+} from "@aws-amplify/ui-react";
 export default function AddProfile(props) {
   const { registration, overrides, ...rest } = props;
   const [textFieldColonFirstNameValue, setTextFieldColonFirstNameValue] =
@@ -58,6 +65,10 @@ export default function AddProfile(props) {
     textFieldThreeOneSixFiveThreeZeroZeroFiveValue,
     setTextFieldThreeOneSixFiveThreeZeroZeroFiveValue,
   ] = useStateMutationAction("");
+  const [textFieldColonGenderValue, setTextFieldColonGenderValue] =
+    useStateMutationAction("");
+  const [textFieldColonRaceValue, setTextFieldColonRaceValue] =
+    useStateMutationAction("");
   const logOutButtonOnClick = useAuthSignOutAction({ global: false });
   const buttonOnClick = useDataStoreCreateAction({
     fields: {
@@ -74,7 +85,8 @@ export default function AddProfile(props) {
       State: textFieldThreeOneSixFiveThreeZeroZeroThreeValue,
       ZipCode: textFieldThreeOneSixFiveThreeZeroZeroFourValue,
       Country: textFieldThreeOneSixFiveThreeZeroZeroFiveValue,
-      Gender: '"Gender"',
+      Gender: textFieldColonGenderValue,
+      Race: textFieldColonRaceValue,
     },
     model: Registration2,
     schema: schema,
@@ -103,7 +115,6 @@ export default function AddProfile(props) {
         backgroundColor="rgba(255,238,238,1)"
         {...getOverrideProps(overrides, "AddProfile31652979")}
       >
-        {/* <LogOutButton></LogOutButton> */}
         <Flex
           gap="0px"
           direction="column"
@@ -114,7 +125,6 @@ export default function AddProfile(props) {
           padding="24px 24px 24px 24px"
           {...getOverrideProps(overrides, "Content")}
         >
-          {/* <div className="bar"> */}
           <Flex
             padding="0px 0px 0px 0px"
             // width="87px"
@@ -142,9 +152,9 @@ export default function AddProfile(props) {
               {...getOverrideProps(overrides, "Add Profile31652984")}
             ></Text>
             <div className="bar">
-            {/* Add Profile */}
-          <LogOutButton></LogOutButton>
-          </div>
+              {/* Add Profile */}
+              <LogOutButton></LogOutButton>
+            </div>
           </Flex>
           {/* </div> */}
           {/* <LogOutButton></LogOutButton> */}
@@ -287,7 +297,7 @@ export default function AddProfile(props) {
               }}
               {...getOverrideProps(overrides, "TextField:DOB")}
             ></TextField>
-            <TextField
+            {/* <TextField
               display="flex"
               gap="8px"
               direction="column"
@@ -303,19 +313,26 @@ export default function AddProfile(props) {
               isDisabled={false}
               labelHidden={false}
               variation="default"
-              {...getOverrideProps(overrides, "TextField: Gender")}
-            ></TextField>
-            <SelectField label="Gender Dropdown Test">
-              <option value="male">Male</option>
-              <option value="female">Female</option>
-              <option value="other">Other</option>
-              value={textFieldColonFirstNameValue}
+              value={textFieldColonGenderValue}
               onChange={(event) => {
-                setTextFieldColonFirstNameValue(event.target.value);
+                setTextFieldColonGenderValue(event.target.value);
               }}
-              {/* {...getOverrideProps(overrides, "TextField: FirstName")} */}
+              {...getOverrideProps(overrides, "TextField: Gender")}
+            ></TextField> */}
+            <SelectField
+              label="Gender"
+              value={textFieldColonGenderValue}
+              onChange={(event) => {
+                setTextFieldColonGenderValue(event.target.value);
+              }}
+              {...getOverrideProps(overrides, "TextField: Gender")}
+            >
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Other">Other</option>
             </SelectField>
-            <TextField
+
+            {/* <TextField
               display="flex"
               gap="8px"
               direction="column"
@@ -331,9 +348,34 @@ export default function AddProfile(props) {
               isDisabled={false}
               labelHidden={false}
               variation="default"
+              value={textFieldColonRaceValue}
+              onChange={(event) => {
+                setTextFieldColonRaceValue(event.target.value);
+              }}
               {...getOverrideProps(overrides, "TextField: Race")}
-            ></TextField>
-            <TextField
+            ></TextField> */}
+            <SelectField
+              label="Race"
+              value={textFieldColonRaceValue}
+              onChange={(event) => {
+                setTextFieldColonGenderValue(event.target.value);
+              }}
+              {...getOverrideProps(overrides, "TextField: Race")}
+            >
+              <option value="White">White</option>
+              <option value="Black or African American">
+                Black or African American
+              </option>
+              <option value="American Indian or Alaska Native">
+                American Indian or Alaska Native
+              </option>
+              <option value="Asian">Asian</option>
+              <option value="Native Hawaiian or Other Pacific Islander">
+                Native Hawaiian or Other Pacific Islander
+              </option>
+              <option value="Two or more races">Two or more races</option>
+            </SelectField>
+            {/* <TextField
               display="flex"
               gap="8px"
               direction="column"
@@ -354,7 +396,30 @@ export default function AddProfile(props) {
                 setTextFieldColonBloodTypeValue(event.target.value);
               }}
               {...getOverrideProps(overrides, "TextField: BloodType")}
-            ></TextField>
+            ></TextField> */}
+            <SelectField
+              label="Blood Type"
+              value={textFieldColonBloodTypeValue}
+              onChange={(event) => {
+                setTextFieldColonGenderValue(event.target.value);
+              }}
+              {...getOverrideProps(overrides, "TextField: BloodType")}
+            >
+              <option value="O+">O+</option>
+              <option value="O-">
+                O-
+              </option>
+              <option value="A+">
+                A+
+              </option>
+              <option value="A-">A-</option>
+              <option value="B+">
+                B+
+              </option>
+              <option value="B-">B-</option>
+              <option value="AB+">AB+</option>
+              <option value="AB-">AB-</option>
+            </SelectField>
             <TextField
               display="flex"
               gap="8px"
@@ -372,7 +437,7 @@ export default function AddProfile(props) {
               labelHidden={false}
               variation="default"
               {...getOverrideProps(overrides, "TextField:DonatedBefore")}
-            ></TextField>
+            ></TextField> 
             <TextField
               display="flex"
               gap="8px"
@@ -581,7 +646,6 @@ export default function AddProfile(props) {
             size="default"
             isDisabled={false}
             variation="primary"
-            marginTop="15px"
             children="Save"
             onClick={() => {
               buttonOnClick();

@@ -6,3 +6,9 @@
     width: 100vh;
     /* background-color: black; */
 }
+
+.logoStyling {
+    height: 10vw;
+    width: 10vw;
+    margin: 0%;
+}

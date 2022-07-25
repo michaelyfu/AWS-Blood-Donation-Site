@@ -7,6 +7,9 @@
 /* eslint-disable */
 import React from "react";
 import AddProfileManual from "./AddProfileManual.css";
+import DatePicker from "react-date-picker";
+import Logo from "../components/Logo.png";
+import DatePickerComp from "./DatePickerComp";
 import { SelectField } from "@aws-amplify/ui-react";
 import LogOutButton from "../components/LogOutButton";
 import {
@@ -25,6 +28,7 @@ import {
   Text,
   TextField,
 } from "@aws-amplify/ui-react";
+
 export default function AddProfile(props) {
   const { registration, overrides, ...rest } = props;
   const [textFieldColonFirstNameValue, setTextFieldColonFirstNameValue] =
@@ -122,6 +126,7 @@ export default function AddProfile(props) {
           alignSelf="stretch"
           objectFit="cover"
           position="relative"
+          // padding="24px 24px 24px 24px"
           padding="24px 24px 24px 24px"
           {...getOverrideProps(overrides, "Content")}
         >
@@ -153,6 +158,7 @@ export default function AddProfile(props) {
             ></Text>
             <div className="bar">
               {/* Add Profile */}
+              {/* <img src={Logo} alt="Logo" className="logoStyling"></img> */}
               <LogOutButton></LogOutButton>
             </div>
           </Flex>
@@ -320,7 +326,21 @@ export default function AddProfile(props) {
               {...getOverrideProps(overrides, "TextField: Gender")}
             ></TextField> */}
             <SelectField
+              display="flex"
+              gap="8px"
+              direction="column"
+              justifyContent="center"
+              shrink="0"
+              alignSelf="stretch"
+              objectFit="cover"
+              position="relative"
+              padding="0px 0px 0px 0px"
               label="Gender"
+              placeholder="Set Gender"
+              size="default"
+              isDisabled={false}
+              labelHidden={false}
+              variation="default"
               value={textFieldColonGenderValue}
               onChange={(event) => {
                 setTextFieldColonGenderValue(event.target.value);
@@ -332,6 +352,7 @@ export default function AddProfile(props) {
               <option value="Other">Other</option>
             </SelectField>
 
+            <DatePickerComp></DatePickerComp>
             {/* <TextField
               display="flex"
               gap="8px"
@@ -355,10 +376,24 @@ export default function AddProfile(props) {
               {...getOverrideProps(overrides, "TextField: Race")}
             ></TextField> */}
             <SelectField
+              display="flex"
+              gap="8px"
+              direction="column"
+              justifyContent="center"
+              shrink="0"
+              alignSelf="stretch"
+              objectFit="cover"
+              position="relative"
+              padding="0px 0px 0px 0px"
               label="Race"
+              placeholder="Set Race"
+              size="default"
+              isDisabled={false}
+              labelHidden={false}
+              variation="default"
               value={textFieldColonRaceValue}
               onChange={(event) => {
-                setTextFieldColonGenderValue(event.target.value);
+                setTextFieldColonRaceValue(event.target.value);
               }}
               {...getOverrideProps(overrides, "TextField: Race")}
             >
@@ -398,24 +433,32 @@ export default function AddProfile(props) {
               {...getOverrideProps(overrides, "TextField: BloodType")}
             ></TextField> */}
             <SelectField
+              display="flex"
+              gap="8px"
+              direction="column"
+              justifyContent="center"
+              shrink="0"
+              alignSelf="stretch"
+              objectFit="cover"
+              position="relative"
+              padding="0px 0px 0px 0px"
               label="Blood Type"
+              placeholder="Set Blood Type"
+              size="default"
+              isDisabled={false}
+              labelHidden={false}
+              variation="default"
               value={textFieldColonBloodTypeValue}
               onChange={(event) => {
-                setTextFieldColonGenderValue(event.target.value);
+                setTextFieldColonBloodTypeValue(event.target.value);
               }}
               {...getOverrideProps(overrides, "TextField: BloodType")}
             >
               <option value="O+">O+</option>
-              <option value="O-">
-                O-
-              </option>
-              <option value="A+">
-                A+
-              </option>
+              <option value="O-">O-</option>
+              <option value="A+">A+</option>
               <option value="A-">A-</option>
-              <option value="B+">
-                B+
-              </option>
+              <option value="B+">B+</option>
               <option value="B-">B-</option>
               <option value="AB+">AB+</option>
               <option value="AB-">AB-</option>
@@ -437,7 +480,7 @@ export default function AddProfile(props) {
               labelHidden={false}
               variation="default"
               {...getOverrideProps(overrides, "TextField:DonatedBefore")}
-            ></TextField> 
+            ></TextField>
             <TextField
               display="flex"
               gap="8px"
@@ -623,17 +666,18 @@ export default function AddProfile(props) {
               {...getOverrideProps(overrides, "TextField31653004")}
             ></TextField>
           </Flex>
-          <Divider
+          {/* <Divider
             height="1px"
             shrink="0"
             alignSelf="stretch"
             objectFit="cover"
             position="relative"
             padding="0px 0px 0px 0px"
+            marginTop = "0px"
             size="small"
             orientation="horizontal"
             {...getOverrideProps(overrides, "Divider31653006")}
-          ></Divider>
+          ></Divider> */}
           <Button
             display="flex"
             gap="0"
@@ -646,6 +690,7 @@ export default function AddProfile(props) {
             size="default"
             isDisabled={false}
             variation="primary"
+            marginTop="10px"
             children="Save"
             onClick={() => {
               buttonOnClick();

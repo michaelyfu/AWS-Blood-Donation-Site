@@ -28,7 +28,6 @@ class App extends Component {
     return (
       <div className="App" style={myStyle}>
         <div className="container">
-          asd;fljasd;klj
           <AddProfile></AddProfile>
         </div>
       </div>

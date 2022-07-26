@@ -158,7 +158,7 @@ export default function AddProfile(props) {
             ></Text>
             <div className="bar">
               {/* Add Profile */}
-              {/* <img src={Logo} alt="Logo" className="logoStyling"></img> */}
+              <img src={Logo} alt="Logo" className="logoStyling"></img>
               <LogOutButton></LogOutButton>
             </div>
           </Flex>

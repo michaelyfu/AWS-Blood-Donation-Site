@@ -319,6 +319,7 @@ export default function AddProfile(props) {
             Date of Birth
             </div>
             <input
+              className = "input-styling"
               type="Date"
               display="flex"
               value={textFieldColonDOBValue}
@@ -352,6 +353,7 @@ export default function AddProfile(props) {
             ></TextField> */}
             <SelectField
               display="flex"
+              className="input-styling"
               gap="8px"
               direction="column"
               justifyContent="center"
@@ -361,7 +363,7 @@ export default function AddProfile(props) {
               position="relative"
               padding="0px 0px 0px 0px"
               label="Gender"
-              placeholder="Set Gender"
+              // placeholder="Set Gender"
               size="default"
               isDisabled={false}
               labelHidden={false}
@@ -372,6 +374,7 @@ export default function AddProfile(props) {
               }}
               {...getOverrideProps(overrides, "TextField: Gender")}
             >
+              <option value="" disabled selected>Set Gender</option>
               <option value="Male">Male</option>
               <option value="Female">Female</option>
               <option value="Other">Other</option>
@@ -410,7 +413,7 @@ export default function AddProfile(props) {
               position="relative"
               padding="0px 0px 0px 0px"
               label="Race"
-              placeholder="Set Race"
+              // placeholder="Set Race"
               size="default"
               isDisabled={false}
               labelHidden={false}
@@ -421,6 +424,7 @@ export default function AddProfile(props) {
               }}
               {...getOverrideProps(overrides, "TextField: Race")}
             >
+              <option value="" disabled selected>Set Race</option>
               <option value="White">White</option>
               <option value="Black or African American">
                 Black or African American
@@ -467,7 +471,7 @@ export default function AddProfile(props) {
               position="relative"
               padding="0px 0px 0px 0px"
               label="Blood Type"
-              placeholder="Set Blood Type"
+              // placeholder="Set Blood Type"
               size="default"
               isDisabled={false}
               labelHidden={false}
@@ -478,6 +482,7 @@ export default function AddProfile(props) {
               }}
               {...getOverrideProps(overrides, "TextField: BloodType")}
             >
+              <option value="" disabled selected>Set Blood Type</option>
               <option value="O+">O+</option>
               <option value="O-">O-</option>
               <option value="A+">A+</option>
@@ -532,6 +537,7 @@ export default function AddProfile(props) {
             Date of Last Donation
             </div>
             <input
+              className="input-styling"
               type="Date"
               display="flex"
               value={textFieldColonLastDonationValue}

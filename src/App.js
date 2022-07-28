@@ -17,11 +17,11 @@ import awsExports from "./aws-exports";
 
 Amplify.configure(awsExports);
 
-const myTheme = {
-  googleSignInButton: { backgroundColor: "red", borderColor: "red" },
-  button: { backgroundColor: "green", borderColor: "red" },
-  signInButtonIcon: { backgroundColor: "green"}
-};
+// const myTheme = {
+//   googleSignInButton: { backgroundColor: "red", borderColor: "red" },
+//   button: { backgroundColor: "green", borderColor: "red" },
+//   signInButtonIcon: { backgroundColor: "green"}
+// };
 
 class App extends Component {
   render() {
@@ -49,4 +49,4 @@ class App extends Component {
   }
 }
 
-export default withAuthenticator(App, myTheme);
+export default withAuthenticator(App);

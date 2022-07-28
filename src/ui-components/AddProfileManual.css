@@ -1,5 +1,11 @@
+.input-styling {
+  border: 3px solid #ccc;
+  font-weight: normal;
+}
+
 * {
     font-family: 'Inter', sans-serif;
+    /* font-weight: bold; */
     color: gray;
 }
 
@@ -12,11 +18,11 @@
     /* background-color: black; */
 }
 
-input::placeholder {
-    /* font-weight: bold; */
-    /* opacity: .5; */
-    /* color: black; */
-}
+/* input::placeholder {
+    font-weight: bold; 
+    opacity: .5; 
+    color: red;
+} */
 
 .logoStyling {
     height: 4vw;
@@ -61,11 +67,14 @@ input[type=Date] {
     color: rgba(58,73,88,255);
   }
 
-  .button-styling {
-    color:red;
+  select {
+    color: red;
   }
-  
-  .amplify-button {
-    background-color: red;
+
+  ::placeholder{
+    color: gray;
   }
-  
+
+  option:not(:first-of-type) {
+    color: black;
+  }

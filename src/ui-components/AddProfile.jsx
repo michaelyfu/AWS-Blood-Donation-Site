@@ -103,8 +103,6 @@ export default function AddProfile(props) {
   return (
     <>          
     <img src={Logo} alt="Logo" className="logoStyling"></img>
-
-    
     <Flex
       gap="0"
       direction="column"

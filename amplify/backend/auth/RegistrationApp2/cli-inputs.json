@@ -3,7 +3,7 @@
   "cognitoConfig": {
     "identityPoolName": "testAuthIdentityPool",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "regist9042c30c",
+    "resourceNameTruncated": "regist2b206071",
     "userPoolName": "RegistrationApp2",
     "autoVerifiedAttributes": [
       "email"
@@ -32,9 +32,9 @@
     "userpoolClientRefreshTokenValidity": 30,
     "userpoolClientWriteAttributes": [],
     "userpoolClientReadAttributes": [],
-    "userpoolClientLambdaRole": "Regist9042c30c_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "Regist2b206071_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "9042c30c",
+    "sharedId": "2b206071",
     "resourceName": "RegistrationApp2",
     "authSelections": "identityPoolAndUserPool",
     "serviceName": "Cognito",

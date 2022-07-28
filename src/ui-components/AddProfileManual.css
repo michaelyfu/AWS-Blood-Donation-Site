@@ -1,6 +1,6 @@
 * {
     font-family: 'Inter', sans-serif;
-    color: black;
+    color: gray;
 }
 
 .bar {
@@ -19,9 +19,10 @@ input::placeholder {
 }
 
 .logoStyling {
-    height: 5vw;
+    height: 4vw;
     width: 'auto';
-    margin: 0%;
+    margin: 20px;
+    margin-top: 17px;
     /* display: flex;
     direction: column;
     background-color: black;
@@ -55,3 +56,16 @@ input[type=Date] {
     labelHidden={false}
     variation="default" */
   }
+
+  .col-title {
+    color: rgba(58,73,88,255);
+  }
+
+  .button-styling {
+    color:red;
+  }
+  
+  .amplify-button {
+    background-color: red;
+  }
+  

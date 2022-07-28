@@ -9,7 +9,7 @@ function LogOutButton() {
         {({ signOut, user }) => (
           <main>
             {/* <h1>Hello {user.username}</h1> */}
-            <Button variation="primary" onClick={signOut}>Sign out</Button>
+            <Button variation="primary" backgroundColor = "red" onClick={signOut}>Sign out</Button>
           </main>
         )}
       </Authenticator>

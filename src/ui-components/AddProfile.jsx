@@ -102,7 +102,7 @@ export default function AddProfile(props) {
   });
   return (
     <>          
-    <img src={Logo} alt="Logo" className="logoStyling"></img>
+    {/* <img src={Logo} alt="Logo" className="logoStyling"></img> */}
     <Flex
       gap="0"
       direction="column"
@@ -137,7 +137,8 @@ export default function AddProfile(props) {
           // padding="24px 24px 24px 24px"
           padding="24px 24px 24px 24px"
           {...getOverrideProps(overrides, "Content")}
-        >
+        >    
+        <img src={Logo} alt="Logo" className="logoStyling"></img>
           <Flex
             padding="0px 0px 0px 0px"
             // width="87px"
@@ -161,7 +162,7 @@ export default function AddProfile(props) {
               left="0px"
               padding="17px 0px 0px 0px" // EDIT THIS TO CHANGE HEIGHT OF "ADD PROFILE TEXT"
               whiteSpace="pre-wrap"
-              children="Add Profile"
+              // children="Add Profile"
               fontFamily= "Inter, sans-serif"
               {...getOverrideProps(overrides, "Add Profile31652984")}
             ></Text>
@@ -203,7 +204,7 @@ export default function AddProfile(props) {
             }}
             {...getOverrideProps(overrides, "Log Out Button")}
           ></Button> */}
-          <Divider
+          {/* <Divider
             height="1px"
             shrink="0"
             alignSelf="stretch"
@@ -213,7 +214,7 @@ export default function AddProfile(props) {
             size="small"
             orientation="horizontal"
             {...getOverrideProps(overrides, "Divider31652985")}
-          ></Divider>
+          ></Divider> */}
           <Flex
             gap="16px"
             direction="column"
@@ -314,7 +315,9 @@ export default function AddProfile(props) {
               {...getOverrideProps(overrides, "TextField:DOB")}
             ></TextField> */}
             <>
+            <div className="col-title">
             Date of Birth
+            </div>
             <input
               type="Date"
               display="flex"
@@ -525,7 +528,9 @@ export default function AddProfile(props) {
               {...getOverrideProps(overrides, "TextField:LastDonation")}
             ></TextField> */}
             <>
+            <div className="col-title">
             Date of Last Donation
+            </div>
             <input
               type="Date"
               display="flex"
@@ -713,6 +718,8 @@ export default function AddProfile(props) {
             {...getOverrideProps(overrides, "Divider31653006")}
           ></Divider> */}
           <Button
+            className = "button-styling"
+            backgroundColor = 'red'
             display="flex"
             gap="0"
             direction="row"

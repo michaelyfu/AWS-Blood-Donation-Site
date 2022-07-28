@@ -8,10 +8,12 @@
 import React from "react";
 import AddProfileManual from "./AddProfileManual.css";
 import DatePicker from "react-date-picker";
+import Calendar from "react-calendar";
 import Logo from "../components/Logo.png";
 import DatePickerComp from "./DatePickerComp";
 import { SelectField } from "@aws-amplify/ui-react";
 import LogOutButton from "../components/LogOutButton";
+import '@fontsource/inter/variable.css';
 import {
   getOverrideProps,
   useAuthSignOutAction,
@@ -28,6 +30,9 @@ import {
   Text,
   TextField,
 } from "@aws-amplify/ui-react";
+
+
+// const [value, onChange] = useState(new Date());
 
 export default function AddProfile(props) {
   const { registration, overrides, ...rest } = props;
@@ -96,6 +101,10 @@ export default function AddProfile(props) {
     schema: schema,
   });
   return (
+    <>          
+    <img src={Logo} alt="Logo" className="logoStyling"></img>
+
+    
     <Flex
       gap="0"
       direction="column"
@@ -116,7 +125,8 @@ export default function AddProfile(props) {
         position="relative"
         padding="0px 0px 0px 0px"
         borderRadius="10px"
-        backgroundColor="rgba(255,238,238,1)"
+        backgroundColor= "white"
+        // backgroundColor="rgba(255,238,238,1)"
         {...getOverrideProps(overrides, "AddProfile31652979")}
       >
         <Flex
@@ -139,7 +149,7 @@ export default function AddProfile(props) {
             {...getOverrideProps(overrides, "Group 28")}
           >
             <Text
-              fontFamily="Inter"
+              // fontFamily="Inter"
               fontSize="16px"
               fontWeight="700"
               color="rgba(13,26,38,1)"
@@ -154,11 +164,12 @@ export default function AddProfile(props) {
               padding="17px 0px 0px 0px" // EDIT THIS TO CHANGE HEIGHT OF "ADD PROFILE TEXT"
               whiteSpace="pre-wrap"
               children="Add Profile"
+              fontFamily= "Inter, sans-serif"
               {...getOverrideProps(overrides, "Add Profile31652984")}
             ></Text>
             <div className="bar">
               {/* Add Profile */}
-              <img src={Logo} alt="Logo" className="logoStyling"></img>
+              {/* <img src={Logo} alt="Logo" className="logoStyling"></img> */}
               <LogOutButton></LogOutButton>
             </div>
           </Flex>
@@ -281,7 +292,7 @@ export default function AddProfile(props) {
               }}
               {...getOverrideProps(overrides, "TextField:LastName")}
             ></TextField>
-            <TextField
+            {/* <TextField
               display="flex"
               gap="8px"
               direction="column"
@@ -298,11 +309,24 @@ export default function AddProfile(props) {
               labelHidden={false}
               variation="default"
               value={textFieldColonDOBValue}
+              
               onChange={(event) => {
                 setTextFieldColonDOBValue(event.target.value);
               }}
               {...getOverrideProps(overrides, "TextField:DOB")}
-            ></TextField>
+            ></TextField> */}
+            <>
+            Date of Birth
+            <input
+              type="Date"
+              display="flex"
+              value={textFieldColonDOBValue}
+              onChange={(event) => {
+                setTextFieldColonDOBValue(event.target.value);
+              }}
+              {...getOverrideProps(overrides, "TextField:DOB")}
+            ></input>
+            </>
             {/* <TextField
               display="flex"
               gap="8px"
@@ -351,8 +375,7 @@ export default function AddProfile(props) {
               <option value="Female">Female</option>
               <option value="Other">Other</option>
             </SelectField>
-
-            <DatePickerComp></DatePickerComp>
+            {/* <DatePickerComp></DatePickerComp> */}
             {/* <TextField
               display="flex"
               gap="8px"
@@ -481,7 +504,7 @@ export default function AddProfile(props) {
               variation="default"
               {...getOverrideProps(overrides, "TextField:DonatedBefore")}
             ></TextField>
-            <TextField
+            {/* <TextField
               display="flex"
               gap="8px"
               direction="column"
@@ -502,7 +525,20 @@ export default function AddProfile(props) {
                 setTextFieldColonLastDonationValue(event.target.value);
               }}
               {...getOverrideProps(overrides, "TextField:LastDonation")}
-            ></TextField>
+            ></TextField> */}
+            <>
+            Date of Last Donation
+            <input
+              type="Date"
+              display="flex"
+              value={textFieldColonLastDonationValue}
+              onChange={(event) => {
+                setTextFieldColonLastDonationValue(event.target.value);
+              }}
+              {...getOverrideProps(overrides, "TextField:LastDonation")}
+            ></input>
+            </>
+            {/* <Calendar onChange={onChange} value={value} /> */}
             <TextField
               display="flex"
               gap="8px"
@@ -700,5 +736,6 @@ export default function AddProfile(props) {
         </Flex>
       </Flex>
     </Flex>
+    </>
   );
 }

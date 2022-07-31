@@ -1,5 +1,5 @@
 .input-styling {
-  border: 3px solid #ccc;
+  border:33px solid #ccc;
   font-weight: normal;
 }
 
@@ -44,9 +44,9 @@ input[type=Date] {
     /* gap: 8px; */
     padding: 8px;
     /* background-color: rgba(255,238,238,1); */
-    border-color: rgba(132,140,149,255);
-    border-width: 1px;
-    border-radius: 5px;
+    border-color: #dcdee0;
+    border-width: 2px;
+    border-radius: 0px;
     font-family: 'Inter', sans-serif;
     /* direction="column"
     justifyContent="center"

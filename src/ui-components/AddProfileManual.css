@@ -1,5 +1,5 @@
 .input-styling {
-  border:33px solid #ccc;
+  border:1px solid #dcdee0;
   font-weight: normal;
 }
 
@@ -18,11 +18,7 @@
     /* background-color: black; */
 }
 
-/* input::placeholder {
-    font-weight: bold; 
-    opacity: .5; 
-    color: red;
-} */
+select:invalid { color: gray; }
 
 .logoStyling {
     height: 4vw;
@@ -78,3 +74,4 @@ input[type=Date] {
   option:not(:first-of-type) {
     color: black;
   }
+

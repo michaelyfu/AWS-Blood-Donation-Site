@@ -30,6 +30,7 @@ import {
   Text,
   TextField,
 } from "@aws-amplify/ui-react";
+import {useState} from 'react';
 
 
 // const [value, onChange] = useState(new Date());
@@ -99,7 +100,18 @@ export default function AddProfile(props) {
     },
     model: Registration2,
     schema: schema,
-  });
+  });  
+  const [isActive, setIsActive] = useState(false);
+  const [isActive2, setIsActive2] = useState(false);
+
+  const handleClick = () => {
+    setIsActive(true);
+  };
+
+  const handleClick2 = () => {
+    setIsActive2(true);
+  };
+
   return (
     <>          
     {/* <img src={Logo} alt="Logo" className="logoStyling"></img> */}
@@ -320,6 +332,10 @@ export default function AddProfile(props) {
             </div>
             <input
               className = "input-styling"
+              style= {{
+                color: isActive ? 'black' : '',
+              }}
+              onClick={handleClick}
               type="Date"
               display="flex"
               value={textFieldColonDOBValue}
@@ -351,9 +367,10 @@ export default function AddProfile(props) {
               }}
               {...getOverrideProps(overrides, "TextField: Gender")}
             ></TextField> */}
-            <SelectField
+            <SelectField 
+              required
               display="flex"
-              className="input-styling"
+              className="choice"
               gap="8px"
               direction="column"
               justifyContent="center"
@@ -363,6 +380,7 @@ export default function AddProfile(props) {
               position="relative"
               padding="0px 0px 0px 0px"
               label="Gender"
+              textColor="red"
               // placeholder="Set Gender"
               size="default"
               isDisabled={false}
@@ -374,8 +392,8 @@ export default function AddProfile(props) {
               }}
               {...getOverrideProps(overrides, "TextField: Gender")}
             >
-              <option value="" disabled selected>Set Gender</option>
-              <option value="Male">Male</option>
+              <option value="" disabled className="options" >Set Gender</option>
+              <option value="Male" className="options">Male</option>
               <option value="Female">Female</option>
               <option value="Other">Other</option>
             </SelectField>
@@ -403,6 +421,7 @@ export default function AddProfile(props) {
               {...getOverrideProps(overrides, "TextField: Race")}
             ></TextField> */}
             <SelectField
+              required
               display="flex"
               gap="8px"
               direction="column"
@@ -461,6 +480,7 @@ export default function AddProfile(props) {
               {...getOverrideProps(overrides, "TextField: BloodType")}
             ></TextField> */}
             <SelectField
+              required
               display="flex"
               gap="8px"
               direction="column"
@@ -540,6 +560,10 @@ export default function AddProfile(props) {
               className="input-styling"
               type="Date"
               display="flex"
+              style= {{
+                color: isActive2 ? 'black' : '',
+              }}
+              onClick={handleClick2}
               value={textFieldColonLastDonationValue}
               onChange={(event) => {
                 setTextFieldColonLastDonationValue(event.target.value);
